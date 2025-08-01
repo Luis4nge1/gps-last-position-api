@@ -100,12 +100,12 @@ export function createApp() {
   });
 
   // Health check (sin autenticación)
-  app.get('/api/v4/health/gps', async (req, res) => {
+  app.get('/api/v4/gps/health', async (req, res) => {
     await gpsController.healthCheck(req, res);
   });
 
   // Health check móvil (sin autenticación)
-  app.get('/api/v4/health/mobile', async (req, res) => {
+  app.get('/api/v4/mobile/health', async (req, res) => {
     await mobileController.healthCheck(req, res);
   });
 
@@ -117,8 +117,8 @@ export function createApp() {
       description: 'Microservicio para consultar últimas posiciones GPS y móviles desde Redis',
       endpoints: {
         health: {
-          gps: config.monitoring.healthCheckPath,
-          mobile: '/api/v4/health/mobile'
+          gps: '/api/v4/gps/health',
+          mobile: '/api/v4/mobile/health'
         },
         api: {
           gps: '/api/v4/gps',
