@@ -18,7 +18,7 @@ COPY . .
 RUN mkdir -p tmp logs data
 
 # Exponer puerto
-EXPOSE 3001
+EXPOSE 3004
 
 # Iniciar aplicación
 CMD ["dumb-init", "node", "src/index.js"]
