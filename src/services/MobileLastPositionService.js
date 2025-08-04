@@ -288,7 +288,7 @@ export class MobileLastPositionService {
   }
 
   /**
-   * Formatea los datos de posición para formato mobile (id, lat, lng, name)
+   * Formatea los datos de posición para formato mobile (id, lat, lng, name, timestamp)
    * @param {Object} position - Datos completos de posición móvil
    * @returns {Object} Datos formateados para mobile
    * @private
@@ -298,7 +298,8 @@ export class MobileLastPositionService {
       id: position.userId,
       lat: position.lat,
       lng: position.lng,
-      name: position.name || position.userId // Usar name si está disponible, sino userId
+      name: position.name || position.userId, // Usar name si está disponible, sino userId
+      timestamp: position.timestamp
     };
   }
 
